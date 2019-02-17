@@ -1,3 +1,3 @@
 # My SICP Notes
 
-Simple notes and pieces of codes used to study SICP.
+Simple notes and pieces of code used to study SICP.
