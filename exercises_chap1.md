@@ -95,3 +95,39 @@ square-root successfully finishes its calculation for both large and small
 numbers, using the same tolerance value (`0.001`). It is interesting to note
 that the definition of `good-enough?` does not even consider the number whose
 square-root we want to find.
+
+
+## 1.8
+
+### First implementation
+
+``` scheme
+(+ 4 5)
+(inc (+ 3 5))
+(inc (inc (+ 2 5)))
+(inc (inc (inc (+ 1 5))))
+(inc (inc (inc (inc (+ 0 5)))))
+(inc (inc (inc (inc 5))))
+(inc (inc (inc 6)))
+(inc (inc 7))
+(inc 8)
+9
+```
+
+As we can see, this procedure generates a recursive process that
+expands and contracts, building up a chain of deferred operations.
+
+### Second implementation
+
+``` scheme
+(+ 4 5)
+(+ 3 6)
+(+ 2 7)
+(+ 1 8)
+(+ 0 9)
+9
+```
+
+This second procedure generates an iterative process since, at each
+step, all necessary information to compute the expression is carried
+by the arguments `a` and `b`.
